@@ -1,0 +1,71 @@
+﻿@*@{
+        ViewBag.Title = "Login";
+    }
+
+    <h2>Login</h2>
+
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email" })
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    }*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label for="email">Email:</label>
+        @Html.TextBox("email", null, new { @class = "form-control", type = "email", required = "required" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+
+    if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.Message
+        </div>
+    }
+}

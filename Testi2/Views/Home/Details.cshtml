@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+@model Testi2.Models.User
+
+@{
+    ViewBag.Title = "User Details";
+}
+
+<h2>User Details</h2>
+
+<div>
+    <h3>User ID: @Model.UserId</h3>
+    <p>Email: @Model.Email</p>
+    <p>First Login: @Model.IsFirstLogin</p>
+    <p>Reset Token: @Model.ResetToken</p>
+    <p>Token Created At: @Model.TokenCreatedAt</p>
+</div>
+
+<a href="@Url.Action("Index")">Back to Users List</a>
